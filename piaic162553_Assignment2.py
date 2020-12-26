@@ -53,7 +53,7 @@ def function2():
 
     return x
     """
-    Expected: out put
+    Expected: output
 array([[[10., 11., 12.],
         [13., 14., 15.],
         [16., 17., 18.]],
@@ -85,7 +85,7 @@ def function4():
    
     arr = np.arange(9).reshape(3,3)
   
-    return arr[[0,2,1]]#wrtie your code here
+    return arr[:,[1,0,2]]#wrtie your code here
     """
     Expected Output:
           array([[1, 0, 2],
@@ -112,7 +112,7 @@ def function5():
 def function6():
     # Create a null vector of size 10 but the fifth and eighth value which is 10,20 respectively
    
-    arr = np.zeros(10,dtype='int23')#wrtie your code here
+    arr = np.zeros(10,dtype='int64')#wrtie your code here
     arr.put([5,8],[10,20])
   
     return arr
@@ -121,7 +121,7 @@ def function6():
 #task7
 def function7():
     #  Create an array of zeros with the same shape and type as X. Dont use reshape method
-    x = np.arange(4, dtype='np.int64')
+    x = np.arange(4, dtype='int64')
   
     return np.zeros_like(x)#write your code here
 
@@ -198,7 +198,9 @@ def function12():
     # HINT: use stacking concept
     
     arr = np.array([1,2,3])
-    ans = #write your code here 
+    a = np.hstack((arr,arr,arr))
+    b = np.repeat(arr,3)
+    ans = np.hstack((b,a))#write your code here 
   
     return ans
 
@@ -319,7 +321,7 @@ def function19():
     # Now return output as "(X*W)+b:
 
     X =  np.arange(1,26).reshape(5,5) # Write your code here
-    W =  np.copy(X) # Write your code here 
+    W =  np.copy(np.transpose(X) ) # Write your code here 
     b =  5 # Write your code here
     output =  (X*W)+b
     return output  # Write your code here
